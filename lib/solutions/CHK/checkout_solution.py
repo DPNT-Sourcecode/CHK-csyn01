@@ -9,6 +9,8 @@ from collections import Counter
 def checkout(skus):
     items_list = [x for x in skus]
     market_obj = SuperMarket(items_list)
+    for i in market_obj.total_items:
+        market_obj.add_product(i)
 
     for i in items_counter:
         try:
@@ -139,5 +141,6 @@ class SuperMarketException(Exception):
 
 if __name__ == '__main__':
     a = checkout("ABACDDE")
+
 
 
