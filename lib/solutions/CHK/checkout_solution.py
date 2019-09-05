@@ -297,8 +297,7 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 30
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        self.total_price += PRICE * items
 
     def product_t(self, items):
         """
@@ -306,8 +305,7 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 20
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        self.total_price += PRICE * items
 
     def product_u(self, items):
         """
@@ -315,17 +313,27 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        self.total_price += PRICE * items
 
     def product_v(self, items):
         """
         calculates product according to its pricing rules
         :param items: int, number of items
+        2V for 90, 3V for 130
         """
         PRICE = 50
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        total_price = 0
+        while items > 0:
+            if items >= 3:
+                total_price += 130
+                items -= 3
+            elif items >= 2:
+                total_price += 90
+                items -= 2
+            else:
+                total_price += PRICE
+                items -= 1
+        self.total_price += total_price
 
     def product_w(self, items):
         """
@@ -333,8 +341,7 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 20
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        self.total_price += PRICE * items
 
     def product_x(self, items):
         """
@@ -342,8 +349,7 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 90
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        self.total_price += PRICE * items
 
     def product_y(self, items):
         """
@@ -351,8 +357,7 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 10
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        self.total_price += PRICE * items
 
     def product_z(self, items):
         """
@@ -360,8 +365,7 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 50
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        self.total_price += PRICE * items
 
     def special_offers(self):
         """
@@ -375,11 +379,17 @@ class SuperMarket:
             discount_num = int(self.total_items['N'] / 3)
             self.total_items['M'] -= discount_num
 
+        if 'R' in self.total_items and 'Q' in self.total_items:
+            discount_num = int(self.total_items['R'] / 3)
+            self.total_items['Q'] -= discount_num
+
+        if 'U' in self.total_items:
+            discount_num = int(self.total_items['U'] / 3)
+            self.total_items['U'] -= discount_num
+
 
 class SuperMarketException(Exception):
     """Invalid product input"""
     pass
 
 
-if __name__ == '__main__':
-    print(checkout("FFFFFF"))
