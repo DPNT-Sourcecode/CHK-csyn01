@@ -41,7 +41,7 @@ class SuperMarket:
     This object includes checkout rules, and must be up to date according to newest discounts
     """
     def __init__(self):
-        self.products_list = []
+        self.total_items = None
         self.product_a_sum = 0
         self.product_b_sum = 0
         self.product_c_sum = 0
@@ -54,7 +54,6 @@ class SuperMarket:
         Adds item to class
         :param product: tuple
         """
-        self.products_list.append(product)
         if product[0] == 'A':
             self.product_a(product[1])
         elif product[0] == 'B':
@@ -126,4 +125,5 @@ class SuperMarket:
 class SuperMarketException(Exception):
     """Invalid product input"""
     pass
+
 
