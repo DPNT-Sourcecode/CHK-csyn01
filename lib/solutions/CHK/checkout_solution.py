@@ -85,4 +85,3 @@ class SuperMarket:
 
 class SuperMarketException(Exception):
     pass
-
