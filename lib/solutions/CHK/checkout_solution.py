@@ -73,12 +73,13 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 30
-        DISCOUNT = 45
-        DISCOUNT_THRESHHOLD = 2
-        if items % 2 == 0:
-            self.product_b_sum += int(DISCOUNT * (items / DISCOUNT_THRESHHOLD))
-        else:
-            self.product_b_sum += PRICE * (items % DISCOUNT_THRESHHOLD) + (DISCOUNT * int(items / DISCOUNT_THRESHHOLD))
+        while items > 0:
+            if items >= 2:
+                self.product_b_sum += 45
+                items -= 2
+            else:
+                self.product_b_sum += PRICE
+                items -= 1
 
     def product_c(self, items):
         """
@@ -120,6 +121,7 @@ class SuperMarketException(Exception):
     pass
 
 if __name__ == '__main__':
-    print(checkout("EEEE"))
+    print(checkout("BBBBBB"))
+
 
 
