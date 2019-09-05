@@ -30,10 +30,6 @@ def checkout(skus):
     return total_price
 
 
-if __name__ == '__main__':
-    a = checkout("A, B, B, C, D")
-    print(a)
-
 
 
 
