@@ -31,8 +31,9 @@ def checkout(skus):
 
 
 if __name__ == '__main__':
-    a = checkout("AAAA")
+    a = checkout("AAAAAAA")
     print(a)
+
 
 
 
