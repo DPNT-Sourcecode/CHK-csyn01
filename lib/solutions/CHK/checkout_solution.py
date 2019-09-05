@@ -1,6 +1,5 @@
 from collections import Counter
 
-
 # noinspection PyUnusedLocal
 # skus = unicode string
 from collections import Counter
@@ -43,6 +42,7 @@ class SuperMarket:
     Supermarket object with a specific checkout list
     This object includes checkout rules, and must be up to date according to newest discounts
     """
+
     def __init__(self, total_items):
         self.total_items = Counter(total_items)
         self.product_a_sum = 0
@@ -58,15 +58,15 @@ class SuperMarket:
         :param product: tuple
         """
         if product == 'A':
-            self.product_a(self.total_items['A'])
-        elif product[0] == 'B':
-            self.product_b(product[1])
-        elif product[0] == 'C':
-            self.product_c(product[1])
-        elif product[0] == 'D':
-            self.product_d(product[1])
-        elif product[0] == 'E':
-            self.product_e(product[1])
+            self.product_a(self.total_items[product])
+        elif product == 'B':
+            self.product_b(self.total_items[product])
+        elif product == 'C':
+            self.product_c(self.total_items[product])
+        elif product == 'D':
+            self.product_d(self.total_items[product])
+        elif product == 'E':
+            self.product_e(self.total_items[product])
         else:
             raise SuperMarketException()
 
@@ -121,12 +121,8 @@ class SuperMarket:
         self.product_e_sum = PRICE * items
 
     def special_offers(self):
-        """
-        Calculates price right before checkout to verify special deals
-        """
-        for i in self.total_items:
-            if 'D' == i[0] and i[1] >= 2:
-                pass
+        if 'B' in self.total_items and self.total_items['E'] >= 2:
+            self.product_b_sum = self.product_b_sum - 30
 
     def checkout(self):
         self.special_offers()
@@ -139,9 +135,6 @@ class SuperMarketException(Exception):
     """Invalid product input"""
     pass
 
+
 if __name__ == '__main__':
     a = checkout("ABACDDE")
-
-
-
-
