@@ -60,7 +60,7 @@ class SuperMarket:
         DISCOUNT_THRESHHOLD_1 = 3
         DISCOUNT_THRESHHOLD_2 = 5
         if items % DISCOUNT_THRESHHOLD_2 == 0:
-            self.product_a_sum += int(DISCOUNT * (items / DISCOUNT_THRESHHOLD_2))
+            self.product_a_sum += 200
         elif items % DISCOUNT_THRESHHOLD_1 == 0:
             self.product_a_sum += int(DISCOUNT * (items / DISCOUNT_THRESHHOLD_1))
         else:
@@ -117,6 +117,9 @@ class SuperMarket:
 class SuperMarketException(Exception):
     """Invalid product input"""
     pass
+
+if __name__ == '__main__':
+    print(checkout("AAAAA"))
 
 
 
