@@ -1,3 +1,5 @@
 # noinspection PyShadowingBuiltins,PyUnusedLocal
 def compute(x, y):
-    raise NotImplementedError()
+    if __name__ == '__main__':
+        return x + y
+
