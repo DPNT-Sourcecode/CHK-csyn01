@@ -120,5 +120,6 @@ class SuperMarketException(Exception):
     pass
 
 if __name__ == '__main__':
-    print(checkout("AAAAAAA"))
+    print(checkout("EEEE"))
+
 
