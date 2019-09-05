@@ -265,7 +265,7 @@ class SuperMarket:
             else:
                 total_price += PRICE
                 items -= 1
-        self.total_price += PRICE * items
+        self.total_price += total_price
 
     def product_q(self, items):
         """
@@ -281,7 +281,7 @@ class SuperMarket:
             else:
                 total_price += PRICE
                 items -= 1
-        self.total_price += PRICE * items
+        self.total_price += total_price
 
     def product_r(self, items):
         """
@@ -391,5 +391,9 @@ class SuperMarket:
 class SuperMarketException(Exception):
     """Invalid product input"""
     pass
+
+
+if __name__ == '__main__':
+    print(checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
 
 
