@@ -25,12 +25,6 @@ class SuperMarket:
 
     def __init__(self, total_items):
         self.total_items = Counter(total_items)
-        self.product_a_sum = 0
-        self.product_b_sum = 0
-        self.product_c_sum = 0
-        self.product_d_sum = 0
-        self.product_e_sum = 0
-        self.product_f_sum = 0
         self.total_price = 0
         self.special_offers()
 
@@ -100,17 +94,18 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 50
+        total_price = 0
         while items > 0:
             if items >= 5:
-                self.product_a_sum += 200
+                total_price += 200
                 items -= 5
             elif items >= 3:
-                self.product_a_sum += 130
+                total_price += 130
                 items -= 3
             else:
-                self.product_a_sum += PRICE
+                total_price += PRICE
                 items -= 1
-        self.total_price += self.product_a_sum
+        self.total_price += total_price
 
     def product_b(self, items):
         """
@@ -118,14 +113,15 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 30
+        total_price = 0
         while items > 0:
             if items >= 2:
-                self.product_b_sum += 45
+                total_price += 45
                 items -= 2
             else:
-                self.product_b_sum += PRICE
+                total_price += PRICE
                 items -= 1
-        self.total_price += self.product_b_sum
+        self.total_price += total_price
 
     def product_c(self, items):
         """
@@ -133,8 +129,7 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 20
-        self.product_c_sum = PRICE * items
-        self.total_price += self.product_c_sum
+        self.total_price += PRICE * items
 
     def product_d(self, items):
         """
@@ -142,8 +137,7 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 15
-        self.product_d_sum = PRICE * items
-        self.total_price += self.product_d_sum
+        self.total_price += PRICE * items
 
     def product_e(self, items):
         """
@@ -151,8 +145,7 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        self.total_price += PRICE * items
 
     def product_f(self, items):
         """
@@ -163,71 +156,83 @@ class SuperMarket:
         if self.total_items['F'] > 2:
             discount_number = int(self.total_items['F'] / 3)
             items -= discount_number
-        self.product_f_sum = PRICE * items
-        self.total_price += self.product_f_sum
+        self.total_price += PRICE * items
 
     def product_g(self, items):
         """
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        PRICE = 20
+        self.total_price += PRICE * items
 
     def product_h(self, items):
         """
         calculates product according to its pricing rules
         :param items: int, number of items
+        5H for 45, 10H for 80
         """
-        PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        PRICE = 10
+        total_price = 0
+        while items > 0:
+            if items >= 10:
+                total_price += 80
+                items -= 10
+            elif items >= 5:
+                total_price += 45
+                items -= 5
+            else:
+                total_price += PRICE
+                items -= 1
+        self.total_price += total_price
 
     def product_i(self, items):
         """
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        PRICE = 35
+        self.total_price += PRICE * items
 
     def product_j(self, items):
         """
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        PRICE = 60
+        self.total_price += PRICE * items
 
     def product_k(self, items):
         """
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        PRICE = 80
+        total_price = 0
+        while items > 0:
+            if items >= 2:
+                total_price += 150
+                items -= 2
+            else:
+                total_price += PRICE
+                items -= 1
+        self.total_price += total_price
 
     def product_l(self, items):
         """
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        PRICE = 90
+        self.total_price += PRICE * items
 
     def product_m(self, items):
         """
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        PRICE = 15
+        self.total_price += PRICE * items
 
     def product_n(self, items):
         """
@@ -235,51 +240,63 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        self.total_price += PRICE * items
 
     def product_o(self, items):
         """
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        PRICE = 10
+        self.total_price += PRICE * items
 
     def product_p(self, items):
         """
         calculates product according to its pricing rules
         :param items: int, number of items
+        5P for 200
         """
-        PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        PRICE = 50
+        total_price = 0
+        while items > 0:
+            if items >= 5:
+                total_price += 200
+                items -= 5
+            else:
+                total_price += PRICE
+                items -= 1
+        self.total_price += PRICE * items
 
     def product_q(self, items):
         """
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        PRICE = 30
+        total_price = 0
+        while items > 0:
+            if items >= 3:
+                total_price += 80
+                items -= 3
+            else:
+                total_price += PRICE
+                items -= 1
+        self.total_price += PRICE * items
 
     def product_r(self, items):
         """
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
-        self.product_e_sum = PRICE * items
-        self.total_price += self.product_e_sum
+        PRICE = 50
+        self.total_price += PRICE * items
 
     def product_s(self, items):
         """
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
+        PRICE = 30
         self.product_e_sum = PRICE * items
         self.total_price += self.product_e_sum
 
@@ -288,7 +305,7 @@ class SuperMarket:
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
+        PRICE = 20
         self.product_e_sum = PRICE * items
         self.total_price += self.product_e_sum
 
@@ -306,7 +323,7 @@ class SuperMarket:
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
+        PRICE = 50
         self.product_e_sum = PRICE * items
         self.total_price += self.product_e_sum
 
@@ -315,7 +332,7 @@ class SuperMarket:
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
+        PRICE = 20
         self.product_e_sum = PRICE * items
         self.total_price += self.product_e_sum
 
@@ -324,7 +341,7 @@ class SuperMarket:
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
+        PRICE = 90
         self.product_e_sum = PRICE * items
         self.total_price += self.product_e_sum
 
@@ -333,7 +350,7 @@ class SuperMarket:
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
+        PRICE = 10
         self.product_e_sum = PRICE * items
         self.total_price += self.product_e_sum
 
@@ -342,7 +359,7 @@ class SuperMarket:
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        PRICE = 40
+        PRICE = 50
         self.product_e_sum = PRICE * items
         self.total_price += self.product_e_sum
 
@@ -353,6 +370,10 @@ class SuperMarket:
         if 'B' in self.total_items and self.total_items['E'] >= 2:
             discount_num = int(self.total_items['E'] / 2)
             self.total_items['B'] -= discount_num
+
+        if 'M' in self.total_items and 'N' in self.total_items:
+            discount_num = int(self.total_items['N'] / 3)
+            self.total_items['M'] -= discount_num
 
 
 class SuperMarketException(Exception):
