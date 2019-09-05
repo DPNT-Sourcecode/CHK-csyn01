@@ -384,7 +384,7 @@ class SuperMarket:
             self.total_items['Q'] -= discount_num
 
         if 'U' in self.total_items:
-            discount_num = int(self.total_items['U'] / 3)
+            discount_num = int(self.total_items['U'] / 6)
             self.total_items['U'] -= discount_num
 
 
@@ -394,6 +394,7 @@ class SuperMarketException(Exception):
 
 
 if __name__ == '__main__':
-    print(checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
+    print(checkout("UUU"))
+
 
 
