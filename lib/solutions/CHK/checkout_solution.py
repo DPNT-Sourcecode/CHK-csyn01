@@ -14,7 +14,7 @@ def checkout(skus):
             if i[1] % 3 == 0:
                 total_price += int(130 * (i[1] / 3))
             else:
-                total_price += 50 * (i[1] % 3)
+                total_price += 50 * (i[1] % 3) + 130
         elif i[0] == 'B':
             if i[1] % 2 == 0:
                 total_price += int(45 * (i[1] / 2))
@@ -31,6 +31,7 @@ def checkout(skus):
 
 
 if __name__ == '__main__':
-    a = checkout("AAAAAAA")
+    a = checkout("A")
     print(a)
+
 
