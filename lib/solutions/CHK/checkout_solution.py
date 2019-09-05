@@ -24,8 +24,15 @@ def checkout(skus):
             total_price += 20 * i[1]
         elif i[0] == 'D':
             total_price += 15 * i[1]
+        elif i[0] == 'E':
+            total_price += 40 * i[1]
         else:
             return -1
 
     return total_price
+
+
+class PriceManagment:
+    
+
 
