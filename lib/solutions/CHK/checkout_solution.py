@@ -13,7 +13,7 @@ def checkout(skus):
             market_obj.add_product(product=item)
         except SuperMarketException:
             return -1
-    market_obj.checkout()
+
     return market_obj.total_price
 
 
@@ -70,6 +70,7 @@ class SuperMarket:
             else:
                 self.product_a_sum += PRICE
                 items -= 1
+        self.total_price += self.product_a_sum
 
     def product_b(self, items):
         """
@@ -84,6 +85,7 @@ class SuperMarket:
             else:
                 self.product_b_sum += PRICE
                 items -= 1
+        self.total_price += self.product_b_sum
 
     def product_c(self, items):
         """
@@ -92,6 +94,7 @@ class SuperMarket:
         """
         PRICE = 20
         self.product_c_sum = PRICE * items
+        self.total_price += self.product_c_sum
 
     def product_d(self, items):
         """
@@ -100,6 +103,7 @@ class SuperMarket:
         """
         PRICE = 15
         self.product_d_sum = PRICE * items
+        self.total_price += self.product_d_sum
 
     def product_e(self, items):
         """
@@ -108,6 +112,7 @@ class SuperMarket:
         """
         PRICE = 40
         self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
 
     def product_f(self, items):
         """
@@ -115,24 +120,26 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 10
-        if 'F' in self.total_items and self.total_items['F'] > 2:
+        if self.total_items['F'] > 2:
             discount_number = int(self.total_items['F'] / 3)
             items -= discount_number
         self.product_f_sum = PRICE * items
+        self.total_price += self.product_f_sum
 
     def special_offers(self):
+        """
+        Special offers before starting the general calculation
+        """
         if 'B' in self.total_items and self.total_items['E'] >= 2:
             discount_num = int(self.total_items['E'] / 2)
             self.total_items['B'] -= discount_num
-
-    def checkout(self):
-        self.total_price = self.product_a_sum + self.product_b_sum + self.product_c_sum + self.product_d_sum + \
-                           self.product_e_sum + self.product_f_sum
 
 
 class SuperMarketException(Exception):
     """Invalid product input"""
     pass
 
+
 if __name__ == '__main__':
     print(checkout("FFFFFF"))
+
