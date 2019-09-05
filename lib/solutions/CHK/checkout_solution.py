@@ -60,6 +60,9 @@ class SuperMarket:
         DISCOUNT_2 = 200
         DISCOUNT_THRESHHOLD_1 = 3
         DISCOUNT_THRESHHOLD_2 = 5
+        if items > DISCOUNT_THRESHHOLD_2:
+            pass
+
         if items % DISCOUNT_THRESHHOLD_2 == 0:
             self.product_a_sum += PRICE * (items % DISCOUNT_THRESHHOLD_2) + (DISCOUNT_2 * int(items / DISCOUNT_THRESHHOLD_2))
 
@@ -121,6 +124,7 @@ class SuperMarketException(Exception):
     pass
 
 if __name__ == '__main__':
-    print(checkout("AAAAAA"))
+    print(checkout("AAAAAAA"))
+
 
 
