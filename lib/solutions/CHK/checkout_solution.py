@@ -1,4 +1,5 @@
-import os
+from collections import Counter
+
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -7,8 +8,7 @@ from collections import Counter
 
 def checkout(skus):
     total_price = 0
-    raw_items_list = [x for x in skus]
-    items_counter = [(x, raw_items_list.count(x)) for x in set(raw_items_list)]
+    items_counter = Counter([x for x in skus])
     for i in items_counter:
         try:
             if i[0] == 'A':
@@ -141,3 +141,6 @@ class SuperMarket:
 class SuperMarketException(Exception):
     """Invalid product input"""
     pass
+
+if __name__ == '__main__':
+    a = checkout("ABACDDE")
