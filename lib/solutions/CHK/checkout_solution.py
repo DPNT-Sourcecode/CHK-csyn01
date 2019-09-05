@@ -7,7 +7,7 @@ from collections import Counter
 
 def checkout(skus):
     total_price = 0
-    raw_items_list = [x.strip() for x in skus.split(",")]
+    raw_items_list = [x for x in skus]
     items_counter = [(x, raw_items_list.count(x)) for x in set(raw_items_list)]
     for i in items_counter:
         if i[0] == 'A':
@@ -30,10 +30,7 @@ def checkout(skus):
     return total_price
 
 
-
-
-
-
-
-
+if __name__ == '__main__':
+    a = checkout("AAA")
+    print(a)
 
