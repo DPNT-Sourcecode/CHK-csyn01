@@ -115,6 +115,3 @@ class SuperMarketException(Exception):
     """Invalid product input"""
     pass
 
-
-
-
