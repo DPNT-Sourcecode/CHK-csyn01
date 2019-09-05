@@ -115,7 +115,7 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 10
-        if 'F' in self.total_items:
+        if 'F' in self.total_items and self.total_items['F'] > 2:
             discount_number = int(self.total_items['F'] / 2)
             items -= discount_number
         self.product_f_sum = PRICE * items
@@ -127,7 +127,7 @@ class SuperMarket:
 
     def checkout(self):
         self.total_price = self.product_a_sum + self.product_b_sum + self.product_c_sum + self.product_d_sum + \
-                           self.product_e_sum
+                           self.product_e_sum + self.product_f_sum
 
 
 class SuperMarketException(Exception):
@@ -135,6 +135,7 @@ class SuperMarketException(Exception):
     pass
 
 if __name__ == '__main__':
-    print(checkout("F"))
+    print(checkout("FFFF"))
+
 
 
