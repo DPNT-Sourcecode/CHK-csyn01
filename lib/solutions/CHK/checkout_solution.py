@@ -123,13 +123,7 @@ class SuperMarket:
         """
         for i in self.total_items:
             if 'D' == i[0] and i[1] >= 2:
-
-
-
-
-
-
-
+                pass
 
     def checkout(self):
         self.special_offers()
@@ -144,3 +138,4 @@ class SuperMarketException(Exception):
 
 if __name__ == '__main__':
     a = checkout("ABACDDE")
+
