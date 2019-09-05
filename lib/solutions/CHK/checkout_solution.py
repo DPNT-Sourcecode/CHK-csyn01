@@ -9,8 +9,8 @@ from collections import Counter
 def checkout(skus):
     items_list = [x for x in skus]
     market_obj = SuperMarket(items_list)
-    for i in market_obj.total_items:
-        market_obj.add_product(i)
+    for item in market_obj.total_items:
+        market_obj.add_product(product=item)
 
     for i in items_counter:
         try:
@@ -57,8 +57,8 @@ class SuperMarket:
         Adds item to class
         :param product: tuple
         """
-        if product[0] == 'A':
-            self.product_a(product[1])
+        if product == 'A':
+            self.product_a(self.total_items['A'])
         elif product[0] == 'B':
             self.product_b(product[1])
         elif product[0] == 'C':
@@ -141,6 +141,7 @@ class SuperMarketException(Exception):
 
 if __name__ == '__main__':
     a = checkout("ABACDDE")
+
 
 
 
