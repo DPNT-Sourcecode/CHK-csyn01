@@ -107,6 +107,7 @@ class SuperMarket:
 
     def special_offers(self):
         if 'B' in self.total_items and self.total_items['E'] >= 2:
+            discount_num = self.total_items['E'] / 2
             self.product_b_sum = self.product_b_sum - 30
 
     def checkout(self):
@@ -121,7 +122,8 @@ class SuperMarketException(Exception):
     pass
 
 if __name__ == '__main__':
-    print(checkout("EEBB"))
+    print(checkout("EEEEBB"))
+
 
 
 
