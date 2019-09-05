@@ -57,11 +57,12 @@ class SuperMarket:
         """
         PRICE = 50
         DISCOUNT = 130
-        DISCOUNT_THRESHHOLD = 3
-        if items % DISCOUNT_THRESHHOLD == 0:
-            self.product_a_sum += int(DISCOUNT * (items / DISCOUNT_THRESHHOLD))
+        DISCOUNT_THRESHHOLD_1 = 3
+        DISCOUNT_THRESHHOLD_2 = 5
+        if items % DISCOUNT_THRESHHOLD_1 == 0:
+            self.product_a_sum += int(DISCOUNT * (items / DISCOUNT_THRESHHOLD_1))
         else:
-            self.product_a_sum += PRICE * (items % DISCOUNT_THRESHHOLD) + (DISCOUNT * int(items / DISCOUNT_THRESHHOLD))
+            self.product_a_sum += PRICE * (items % DISCOUNT_THRESHHOLD_1) + (DISCOUNT * int(items / DISCOUNT_THRESHHOLD_1))
 
     def product_b(self, items):
         """
@@ -114,5 +115,6 @@ class SuperMarket:
 class SuperMarketException(Exception):
     """Invalid product input"""
     pass
+
 
 
