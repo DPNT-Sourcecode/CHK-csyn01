@@ -116,8 +116,5 @@ class SuperMarketException(Exception):
     pass
 
 
-if __name__ == '__main__':
-    a = checkout("EE")
-    print(a)
 
 
