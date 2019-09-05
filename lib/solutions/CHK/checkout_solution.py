@@ -49,6 +49,8 @@ class SuperMarket:
             self.product_d(self.total_items[product])
         elif product == 'E':
             self.product_e(self.total_items[product])
+        elif product == 'F':
+            self.product_f(self.total_items[product])
         else:
             raise SuperMarketException()
 
@@ -113,7 +115,10 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 10
-        self.product_e_sum = PRICE * items
+        if 'F' in self.total_items:
+            discount_number = int(self.total_items['F'] / 2)
+            items -= discount_number
+        self.product_f_sum = PRICE * items
 
     def special_offers(self):
         if 'B' in self.total_items and self.total_items['E'] >= 2:
@@ -130,5 +135,6 @@ class SuperMarketException(Exception):
     pass
 
 if __name__ == '__main__':
-    print(checkout("EEBB"))
+    print(checkout("F"))
+
 
