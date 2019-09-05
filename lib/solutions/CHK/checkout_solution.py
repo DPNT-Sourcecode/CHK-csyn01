@@ -56,20 +56,13 @@ class SuperMarket:
         :param items: int, number of items
         """
         PRICE = 50
-        DISCOUNT_1 = 130
-        DISCOUNT_2 = 200
-        DISCOUNT_THRESHHOLD_1 = 3
-        DISCOUNT_THRESHHOLD_2 = 5
         while items > 0:
             if items >= 5:
-                if items % 5 == 0:
-                    self.product_a_sum += int(200 * (items / 5))
-                else:
-                    self.product_a_sum += PRICE * (items % 5) + (DISCOUNT_1 * int(items / 5))
+                self.product_a_sum += 200
                 items -= 5
             elif items >= 3:
-                self.product_a_sum += PRICE * (items % DISCOUNT_THRESHHOLD_1) + (DISCOUNT_1 * int(items / DISCOUNT_THRESHHOLD_1))
-                items -= DISCOUNT_THRESHHOLD_1
+                self.product_a_sum += 130
+                items -= 3
             else:
                 self.product_a_sum += PRICE
                 items -= 1
@@ -128,3 +121,4 @@ class SuperMarketException(Exception):
 
 if __name__ == '__main__':
     print(checkout("AAAAAAA"))
+
