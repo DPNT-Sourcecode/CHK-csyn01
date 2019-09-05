@@ -116,7 +116,7 @@ class SuperMarket:
         """
         PRICE = 10
         if 'F' in self.total_items and self.total_items['F'] > 2:
-            discount_number = int(self.total_items['F'] / 2)
+            discount_number = int(self.total_items['F'] / 3)
             items -= discount_number
         self.product_f_sum = PRICE * items
 
@@ -135,7 +135,8 @@ class SuperMarketException(Exception):
     pass
 
 if __name__ == '__main__':
-    print(checkout("FFFF"))
+    print(checkout("FFFFFF"))
+
 
 
 
