@@ -86,7 +86,13 @@ class SuperMarket:
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        pass
+        PRICE = 30
+        DISCOUNT = 45
+        DISCOUNT_THRESHHOLD = 2
+        if items % 2 == 0:
+            self.product_b_sum += int(DISCOUNT * (items / DISCOUNT_THRESHHOLD))
+        else:
+            self.product_b_sum += PRICE * (items % DISCOUNT_THRESHHOLD) + (DISCOUNT * int(items / DISCOUNT_THRESHHOLD))
 
     def product_c(self, items):
         """
@@ -109,7 +115,8 @@ class SuperMarket:
         calculates product according to its pricing rules
         :param items: int, number of items
         """
-        pass
+        PRICE = 40
+        self.product_e_sum = PRICE * items
 
     def checkout(self):
         self.total_price = self.product_a_sum + self.product_b_sum + self.product_c_sum + self.product_d_sum + \
@@ -119,3 +126,4 @@ class SuperMarket:
 class SuperMarketException(Exception):
     """Invalid product input"""
     pass
+
