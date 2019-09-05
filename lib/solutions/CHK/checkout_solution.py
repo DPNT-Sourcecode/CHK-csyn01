@@ -116,6 +116,7 @@ class SuperMarket:
         """
         PRICE = 40
         self.product_e_sum = PRICE * items
+        if []
 
     def checkout(self):
         self.total_price = self.product_a_sum + self.product_b_sum + self.product_c_sum + self.product_d_sum + \
@@ -125,5 +126,6 @@ class SuperMarket:
 class SuperMarketException(Exception):
     """Invalid product input"""
     pass
+
 
 
