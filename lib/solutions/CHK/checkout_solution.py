@@ -6,7 +6,7 @@ from collections import Counter
 
 
 def checkout(skus):
-    items_list = [x.upper() for x in skus]
+    items_list = [x for x in skus]
     market_obj = SuperMarket(items_list)
     for item in market_obj.total_items:
         try:
@@ -114,4 +114,5 @@ class SuperMarket:
 class SuperMarketException(Exception):
     """Invalid product input"""
     pass
+
 
