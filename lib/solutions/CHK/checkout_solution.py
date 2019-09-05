@@ -51,6 +51,46 @@ class SuperMarket:
             self.product_e(self.total_items[product])
         elif product == 'F':
             self.product_f(self.total_items[product])
+        elif product == 'G':
+            self.product_g(self.total_items[product])
+        elif product == 'H':
+            self.product_h(self.total_items[product])
+        elif product == 'I':
+            self.product_i(self.total_items[product])
+        elif product == 'J':
+            self.product_j(self.total_items[product])
+        elif product == 'K':
+            self.product_k(self.total_items[product])
+        elif product == 'L':
+            self.product_l(self.total_items[product])
+        elif product == 'M':
+            self.product_m(self.total_items[product])
+        elif product == 'N':
+            self.product_n(self.total_items[product])
+        elif product == 'O':
+            self.product_o(self.total_items[product])
+        elif product == 'P':
+            self.product_p(self.total_items[product])
+        elif product == 'Q':
+            self.product_q(self.total_items[product])
+        elif product == 'R':
+            self.product_r(self.total_items[product])
+        elif product == 'S':
+            self.product_s(self.total_items[product])
+        elif product == 'T':
+            self.product_t(self.total_items[product])
+        elif product == 'U':
+            self.product_u(self.total_items[product])
+        elif product == 'V':
+            self.product_v(self.total_items[product])
+        elif product == 'W':
+            self.product_w(self.total_items[product])
+        elif product == 'X':
+            self.product_x(self.total_items[product])
+        elif product == 'Y':
+            self.product_y(self.total_items[product])
+        elif product == 'Z':
+            self.product_z(self.total_items[product])
         else:
             raise SuperMarketException()
 
@@ -126,6 +166,186 @@ class SuperMarket:
         self.product_f_sum = PRICE * items
         self.total_price += self.product_f_sum
 
+    def product_g(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_h(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_i(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_j(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_k(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_l(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_m(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_n(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_o(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_p(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_q(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_r(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_s(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_t(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_u(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_v(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_w(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_x(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_y(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
+    def product_z(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 40
+        self.product_e_sum = PRICE * items
+        self.total_price += self.product_e_sum
+
     def special_offers(self):
         """
         Special offers before starting the general calculation
@@ -142,4 +362,3 @@ class SuperMarketException(Exception):
 
 if __name__ == '__main__':
     print(checkout("FFFFFF"))
-
