@@ -7,8 +7,9 @@ from collections import Counter
 
 
 def checkout(skus):
-    total_price = 0
-    items_counter = Counter([x for x in skus])
+    items_list = [x for x in skus]
+    market_obj = SuperMarket(items_list)
+
     for i in items_counter:
         try:
             if i[0] == 'A':
@@ -40,8 +41,8 @@ class SuperMarket:
     Supermarket object with a specific checkout list
     This object includes checkout rules, and must be up to date according to newest discounts
     """
-    def __init__(self):
-        self.total_items = None
+    def __init__(self, total_items):
+        self.total_items = Counter(total_items)
         self.product_a_sum = 0
         self.product_b_sum = 0
         self.product_c_sum = 0
@@ -138,4 +139,5 @@ class SuperMarketException(Exception):
 
 if __name__ == '__main__':
     a = checkout("ABACDDE")
+
 
