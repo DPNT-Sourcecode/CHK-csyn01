@@ -6,35 +6,15 @@ from collections import Counter
 
 
 def checkout(skus):
-    items_list = [x for x in skus]
+    items_list = [x.upper() for x in skus]
     market_obj = SuperMarket(items_list)
     for item in market_obj.total_items:
-        market_obj.add_product(product=item)
-
-    for i in items_counter:
         try:
-            if i[0] == 'A':
-                if i[1] % 3 == 0:
-                    total_price += int(130 * (i[1] / 3))
-                else:
-                    total_price += 50 * (i[1] % 3) + (130 * int(i[1] / 3))
-            elif i[0] == 'B':
-                if i[1] % 2 == 0:
-                    total_price += int(45 * (i[1] / 2))
-                else:
-                    total_price += 30 * (i[1] % 2) + (45 * int(i[1] / 2))
-            elif i[0] == 'C':
-                total_price += 20 * i[1]
-            elif i[0] == 'D':
-                total_price += 15 * i[1]
-            elif i[0] == 'E':
-                total_price += 40 * i[1]
-            else:
-                return -1
+            market_obj.add_product(product=item)
         except SuperMarketException:
             return -1
-
-    return total_price
+    market_obj.checkout()
+    return market_obj.total_price
 
 
 class SuperMarket:
@@ -137,4 +117,6 @@ class SuperMarketException(Exception):
 
 
 if __name__ == '__main__':
-    a = checkout("ABACDDE")
+    a = checkout("AAAAAA")
+    print(a)
+
