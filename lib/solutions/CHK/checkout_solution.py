@@ -29,7 +29,7 @@ def checkout(skus):
                 total_price += 40 * i[1]
             else:
                 return -1
-        except ValueError:
+        except SuperMarketException:
             return -1
 
     return total_price
@@ -44,6 +44,9 @@ class SuperMarket:
         self.products_list = []
         self.product_a_sum = 0
         self.product_b_sum = 0
+        self.product_c_sum = 0
+        self.product_d_sum = 0
+        self.product_e_sum = 0
         self.total_price = 0
 
     def add_product(self, product):
@@ -55,33 +58,64 @@ class SuperMarket:
         if product[0] == 'A':
             self.product_a(product[1])
         elif product[0] == 'B':
-            self.product_a(product[1])
-        elif product[0] == 'E':
             self.product_b(product[1])
+        elif product[0] == 'C':
+            self.product_c(product[1])
+        elif product[0] == 'D':
+            self.product_d(product[1])
+        elif product[0] == 'E':
+            self.product_e(product[1])
         else:
             raise SuperMarketException()
 
     def product_a(self, items):
         """
         calculates product according to its pricing rules
-        :param items: int
+        :param items: int, number of items
         """
-        pass
+        PRICE = 50
+        DISCOUNT = 130
+        DISCOUNT_THRESHHOLD = 3
+        if items % DISCOUNT_THRESHHOLD == 0:
+            self.product_a_sum += int(DISCOUNT * (items / DISCOUNT_THRESHHOLD))
+        else:
+            self.product_a_sum += PRICE * (items % DISCOUNT_THRESHHOLD) + (DISCOUNT * int(items / DISCOUNT_THRESHHOLD))
 
     def product_b(self, items):
         """
         calculates product according to its pricing rules
-        :param items: int
+        :param items: int, number of items
         """
         pass
+
+    def product_c(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 20
+        self.product_c_sum = PRICE * items
+
+    def product_d(self, items):
+        """
+        calculates product according to its pricing rules
+        :param items: int, number of items
+        """
+        PRICE = 15
+        self.product_d_sum = PRICE * items
 
     def product_e(self, items):
         """
         calculates product according to its pricing rules
-        :param items: int
+        :param items: int, number of items
         """
         pass
 
+    def checkout(self):
+        self.total_price = self.product_a_sum + self.product_b_sum + self.product_c_sum + self.product_d_sum + \
+                           self.product_e_sum
+
 
 class SuperMarketException(Exception):
+    """Invalid product input"""
     pass
