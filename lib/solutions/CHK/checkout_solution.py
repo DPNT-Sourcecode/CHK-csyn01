@@ -116,5 +116,8 @@ class SuperMarketException(Exception):
     """Invalid product input"""
     pass
 
+if __name__ == '__main__':
+    print(checkout(["AAAAA"]))
+
 
 
