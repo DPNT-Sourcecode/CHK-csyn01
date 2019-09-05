@@ -5,5 +5,8 @@
 def hello(friend_name):
     return f'Hello, {friend_name}!'
 
+if __name__ == '__main__':
+    print(hello('asaf'))
+
 
 
