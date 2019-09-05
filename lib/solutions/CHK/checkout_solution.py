@@ -116,9 +116,24 @@ class SuperMarket:
         """
         PRICE = 40
         self.product_e_sum = PRICE * items
-        if []
+
+    def special_offers(self):
+        """
+        Calculates price right before checkout to verify special deals
+        """
+        for i in self.total_items:
+            if 'D' == i[0] and i[1] >= 2:
+
+
+
+
+
+
+
 
     def checkout(self):
+        self.special_offers()
+
         self.total_price = self.product_a_sum + self.product_b_sum + self.product_c_sum + self.product_d_sum + \
                            self.product_e_sum
 
@@ -126,6 +141,3 @@ class SuperMarket:
 class SuperMarketException(Exception):
     """Invalid product input"""
     pass
-
-
-
