@@ -11,15 +11,15 @@ def checkout(skus):
     items_counter = [(x, raw_items_list.count(x)) for x in set(raw_items_list)]
     for i in items_counter:
         if i[0] == 'A':
-            if i[1] == 3:
-                total_price += 130
+            if i[1] % 3 == 0:
+                total_price += 130 * (i[1] / 3)
             else:
-                total_price += 50 * i[1]
+                total_price += 50 * (i[1] % 3)
         elif i[0] == 'B':
-            if i[1] == 2:
-                total_price += 45
+            if i[1] % 2:
+                total_price += 45 * (i[1] / 2)
             else:
-                total_price += 30 * i[1]
+                total_price += 30 * (i[1] % 2)
         elif i[0] == 'C':
             total_price += 20 * i[1]
         elif i[0] == 'D':
@@ -33,5 +33,6 @@ def checkout(skus):
 if __name__ == '__main__':
     a = checkout("AAAA")
     print(a)
+
 
 
